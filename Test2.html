@@ -1,0 +1,18 @@
+<?php
+// Start the session        This page initializes the session for a specific username and passes it into the insert.php
+session_start();
+?>
+
+
+<body>
+<form action="insert.php" method="post">
+username: <input type="text" name="username" /><br><br> 		
+<input type="submit" />
+</form>
+
+<input type="button" onclick="location.href='movedata.php';" value="Move all entities" />
+
+<input type="button" onclick="location.href='deletetable.php';" value="Delete all entities" />
+</body>
+
+</html>
