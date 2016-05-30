@@ -19,7 +19,7 @@ if ($conn->connect_error) {
 //$result = $conn->query($sql);
 //$r = rand(0,100);
 $name = $_POST[username];
-
+	$_SESSION["sessionposition"] = 0;
 //Instert username into playertable
 
 $sql="INSERT INTO playertable (username)
@@ -29,6 +29,7 @@ VALUES
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
 	$_SESSION['currentplayer'] = $name;
+
 	
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
@@ -36,7 +37,7 @@ if ($conn->query($sql) === TRUE) {
 //redirect to action.php
 
 //
-header('Location: action.php');
+header('Location: firstscreen.php');
 exit;
 $conn->close();
 ?>
