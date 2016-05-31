@@ -3,7 +3,7 @@ session_start();
 // Echo session variables that were set on previous page
 echo "You are " . $_SESSION['currentplayer'] . ".";
 $dienumber = rand(1,6);
-echo "The Die number is" . $dienumber;
+echo "<br> The Die number is " . $dienumber;
 
 $nam = $_SESSION['currentplayer'];
 
@@ -44,7 +44,7 @@ $result = mysql_query($SQL);
 
 while ( $db_field = mysql_fetch_assoc($result) ) {
 
-echo "Your position is" . $db_field['position'] . "<BR>";
+echo "<br> Your position is " . $db_field['position'] . "<BR>";
 $_SESSION["sessionposition"] = $db_field['position'];
 }
 
@@ -64,7 +64,7 @@ mysql_close($db_handle);
 $conn->close();
 //check the form after that..
 ?>
-
+<meta name="viewport" content="width=device-width, initial-scale=2.0">
 <input type="button" onclick="location.href='firstscreen.php';" value="Continue" />
 
 

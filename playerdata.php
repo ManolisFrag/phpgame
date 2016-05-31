@@ -48,7 +48,7 @@ mysql_close($db_handle);
 
 
 if($dbpos == 2){
-	echo "Enter your emailvar";	
+	echo "Enter your email";	
 }else{
 	if($dbpos == 6){
 		echo "Enter your signature";	
@@ -171,11 +171,13 @@ if($dbpos == 2){
 
 	
 ?>
-
+<body>
+<meta name="viewport" content="width=device-width, initial-scale=1.5">
 <form action="datasubmit.php" method="get">
 <input type="text" name="fname" /><br>
 <input type="submit" />
 </form>
 
-<input type="button" onclick="location.href='firstscreen.php';" value="Continue" />
-<input type="button" onclick="location.href='deny.php';" value="I don't want to give my data" />
+<input type="button" onclick="location.href='firstscreen.php';" value="Continue" /> <br><br>
+<br><br> <input type="button" onclick="location.href='deny.php';" value="I don't want to give my data" /> <br><br>
+</body>

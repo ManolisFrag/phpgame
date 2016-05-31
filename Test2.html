@@ -5,12 +5,13 @@ session_start();
 
 
 <body>
+<meta name="viewport" content="width=device-width, initial-scale=1.6">
 <form action="insert.php" method="post">
-username: <input type="text" name="username" /><br><br> 		
+username: <br><br> <input type="text" name="username" /><br><br> 		
 <input type="submit" />
 </form>
 
-<input type="button" onclick="location.href='movedata.php';" value="Move all entities" />
+<input type="button" onclick="location.href='movedata.php';" value="Move all entities" /><br><br>
 
 <input type="button" onclick="location.href='deletetable.php';" value="Delete all entities" />
 </body>

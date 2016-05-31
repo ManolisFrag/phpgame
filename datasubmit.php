@@ -174,7 +174,7 @@ $newvalue = $dbpos + $extraposition;
 $sql = "UPDATE playertable SET data = '$datab', position = position + $extraposition WHERE username = '{$name3}'";
 //echo "Your new position is now" . $newvalue;
 if ($conn->query($sql) === TRUE) {
-    echo "Your new position is now" . $newvalue;
+    echo "<br> Your new position is now " . $newvalue;
 	
 	
 } else {
@@ -183,5 +183,5 @@ if ($conn->query($sql) === TRUE) {
 $conn->close();
 //check the form after that..
 ?>
-
-<input type="button" onclick="location.href='firstscreen.php';" value="Continue" />
+<meta name="viewport" content="width=device-width, initial-scale=1.6">
+<br><br> <input type="button" onclick="location.href='firstscreen.php';" value="Continue" />
