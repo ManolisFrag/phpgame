@@ -10,6 +10,6 @@
 	
     $sql = "TRUNCATE TABLE playertable";
     mysqli_query($con, $sql) or die(mysqli_error());
-	header('Location: Test2.html');
+	header('Location: gamemaster.html');
 	exit;
 ?>

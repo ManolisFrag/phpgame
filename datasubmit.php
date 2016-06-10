@@ -8,6 +8,8 @@ $name3 = $_SESSION['currentplayer'];
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
+ini_set('display_errors',0);
+
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -19,6 +21,10 @@ $extraposition = 0;
 if($dbpos == 2){
 		echo "You go 4 steps forward";
 				$extraposition = 4;
+	}else{
+		if($dbpos == 4){
+		echo "You got 20 steps forward";
+				$extraposition = 20;
 	}else{
 	if($dbpos == 6){
 		echo "You got 6 steps forward";
@@ -72,15 +78,21 @@ if($dbpos == 2){
 		echo "You got 5 steps forward";
 			$extraposition = 5;	
 	}else{
+		if($dbpos == 28){
+		echo "You got 13 steps forward";
+			$extraposition = 13;	
+	}else{
 		if($dbpos == 30){
 		echo "You got 6 steps forward";
 			$extraposition = 6;	
 	}else{
 		if($dbpos == 34){
-		//echo "Enter your Best friend's name";	
+		echo "Enter your Best friend's name";
+			$extraposition = 4;		
 	}else{
 		if($dbpos == 35){
-		//echo "Enter your Nationality";	
+		echo "Enter your Nationality";	
+		$extraposition = 0;   //throw the dice again
 	}else{
 		if($dbpos == 37){
 		echo "You got 3 steps forward";
@@ -103,7 +115,7 @@ if($dbpos == 2){
 			$extraposition = 2;	
 	}else{
 		if($dbpos == 46){
-		echo "You got 1 steps forward";
+		echo "You got 1 step forward";
 			$extraposition = 1;	
 	}else{
 		if($dbpos == 48){
@@ -127,11 +139,12 @@ if($dbpos == 2){
 			$extraposition = 5;	
 	}else{
 		if($dbpos == 61){
-		echo "Stay where you are";	
+		echo "Stay where you are";
+			$extraposition = 0;		
 	}else{
 		if($dbpos == 62){
-		echo "Get 5 steps back";
-			$extraposition = -5;
+		echo "Got 3 steps back";
+			$extraposition = -3;
 	}else{
 		if($dbpos > 62){
 		echo "You have finished the game. Congratulations!";	
@@ -168,7 +181,7 @@ if($dbpos == 2){
 	}
 } 
 
-	}
+	}}}
 $newvalue = $dbpos + $extraposition;
 	
 $sql = "UPDATE playertable SET data = '$datab', position = position + $extraposition WHERE username = '{$name3}'";

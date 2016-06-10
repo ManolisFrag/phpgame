@@ -20,6 +20,10 @@ if($dbpos == 2){
 		echo "You go 1 steps forward";
 				$extraposition = 1;
 	}else{
+		if($dbpos == 4){
+		echo "You got 4 steps forward";
+				$extraposition = 4;
+	}else{
 	if($dbpos == 6){
 		echo "Roll the dice again";
 				$extraposition = 0;
@@ -48,6 +52,10 @@ if($dbpos == 2){
 		echo "You got 4 steps forward";
 			$extraposition = 4;
 	}else{
+		if($dbpos == 16){
+		echo "You went to tile 24. Congratulations!";
+			$extraposition = 8;
+	}else{
 		if($dbpos == 21){
 		echo "You got 3 steps forward";
 			$extraposition = 3;	
@@ -72,6 +80,10 @@ if($dbpos == 2){
 		echo "You got 0 steps forward";
 			$extraposition = 0;	
 	}else{
+		if($dbpos == 28){
+		echo "You got 5 steps forward";
+				$extraposition = 5;
+	}else{
 		if($dbpos == 30){
 		echo "Send someone 5 steps back";
 			$extraposition = 0;	
@@ -90,6 +102,10 @@ if($dbpos == 2){
 		if($dbpos == 39){
 		echo "You got 1 steps forward";
 			$extraposition = 1;	
+	}else{
+		if($dbpos == 41){
+		echo "You went to tile 51. Congratulations!";
+			$extraposition = 10;
 	}else{
 		if($dbpos == 42){
 		echo "You got 1 steps forward";
@@ -132,7 +148,8 @@ if($dbpos == 2){
 			$extraposition = 1;
 	}else{
 		if($dbpos == 62){
-		echo "Stay where you are";	
+		echo "You got 5 steps back";
+			$extraposition = -5;		
 	}else{
 		if($dbpos > 62){
 		echo "You have finished the game. Congratulations!";	
@@ -169,7 +186,7 @@ if($dbpos == 2){
 	}
 } 
 
-	}
+	}}}}}
 $newvalue = $dbpos + $extraposition;
 	
 $sql = "UPDATE playertable SET position = $newvalue WHERE username = '{$name4}'";

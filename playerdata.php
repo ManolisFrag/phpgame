@@ -50,6 +50,9 @@ mysql_close($db_handle);
 if($dbpos == 2){
 	echo "Enter your email";	
 }else{
+	if($dbpos == 4){
+		echo "Enter your password";	
+	}else{
 	if($dbpos == 6){
 		echo "Enter your signature";	
 	}else{
@@ -85,6 +88,9 @@ if($dbpos == 2){
 	}else{
 		if($dbpos == 27){
 		echo "Enter your Mom's Name";	
+	}else{
+		if($dbpos == 28){
+		echo "Enter your Email password";	
 	}else{
 		if($dbpos == 30){
 		echo "Enter your Dad's Name";	
@@ -167,7 +173,7 @@ if($dbpos == 2){
 	}
 	}
 	}
-} 
+} }}
 
 	
 ?>
@@ -178,6 +184,6 @@ if($dbpos == 2){
 <input type="submit" />
 </form>
 
-<input type="button" onclick="location.href='firstscreen.php';" value="Continue" /> <br><br>
-<br><br> <input type="button" onclick="location.href='deny.php';" value="I don't want to give my data" /> <br><br>
+
+
 </body>

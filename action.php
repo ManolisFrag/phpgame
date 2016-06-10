@@ -3,7 +3,7 @@ session_start();
 // Echo session variables that were set on previous page
 echo "You are " . $_SESSION['currentplayer'] . ".";
 $dienumber = rand(1,6);
-echo "<br> The Die number is " . $dienumber;
+echo "<br> The Dice number is " . $dienumber;
 
 $nam = $_SESSION['currentplayer'];
 
@@ -43,10 +43,12 @@ $SQL = "SELECT position FROM playertable WHERE username='{$nam}'";
 $result = mysql_query($SQL);
 
 while ( $db_field = mysql_fetch_assoc($result) ) {
-
+$dbpos = $db_field['position'];
 echo "<br> Your position is " . $db_field['position'] . "<BR>";
 $_SESSION["sessionposition"] = $db_field['position'];
 }
+
+
 
 mysql_close($db_handle);
 
@@ -58,14 +60,146 @@ mysql_close($db_handle);
 
 }
 
-
-
-
 $conn->close();
 //check the form after that..
+
+
+if($dbpos == 2){
+	echo "If you want to move 4 steps forward,"."<br>". "you have to pay for this with your Email address";
+}else{
+	if($dbpos == 4){
+		echo "If you want to move 20 steps forward,"."<br>". " you have to pay for this with your Social Media password";			
+	}else{
+	if($dbpos == 6){
+		echo "If you want to move 6 steps forward,"."<br>". " you have to pay for this with your Signature";			
+	}else{
+		if($dbpos == 7){
+		echo "If you want to move 4 steps forward,"."<br>". " you have to pay for this with your Hair color";	
+	}else{
+		if($dbpos == 9){
+		echo "If you want to move 3 steps forward,"."<br>". " you have to pay for this with your Eye color";	
+	}else{
+		if($dbpos == 10){
+		echo "If you want to move 3 steps forward,"."<br>". " you have to pay for this with your Favorite address";	
+	}else{
+		if($dbpos == 13){
+		echo "If you want to move 4 steps forward,"."<br>". " you have to pay for this with your Number of siblings";	
+	}else{
+		if($dbpos == 14){
+		echo "If you want to move 4 steps forward,"."<br>". " you have to pay for this with your Height";	
+	}else{
+		if($dbpos == 15){
+		echo "If you want to move 4 steps forward,"."<br>". " you have to pay for this with your Weight";	
+	}else{
+		if($dbpos == 16){
+		echo "You entered in a"."<br>". " secret passage."."<br>". "Press No to continue";	
+	}else{
+		if($dbpos == 21){
+		echo "If you want to move 2 steps forward,"."<br>". " you have to pay for this with your Shoe size";	
+	}else{
+		if($dbpos == 22){
+		echo "If you want to move 5 steps forward,"."<br>". " you have to pay for this with your Picture";	
+	}else{
+		if($dbpos == 23){
+		echo "If you want to move 4 steps forward,"."<br>". " you have to pay for this with your City where you live";	
+	}else{
+		if($dbpos == 25){
+		echo "If you want to move 4 steps forward, "."<br>". "you have to pay for this with your Province";	
+	}else{
+		if($dbpos == 27){
+		echo "If you want to move 5 steps forward,"."<br>". " you have to pay for this with your Mom's name";	
+	}else{
+		if($dbpos == 28){
+		echo "If you want to move 13 steps forward,"."<br>". " you have to pay for this with your Email password";	
+	}else{
+		if($dbpos == 30){
+		echo "If you want to move 6 steps forward, "."<br>". "you have to pay for this with your Dad's name";	
+	}else{
+		if($dbpos == 34){
+		echo "If you want to move 4 steps forward, "."<br>". "you have to pay for this with your Best friend's name"; //incentive missing	
+	}else{
+		if($dbpos == 35){
+		echo "If you want throw the dice again,"."<br>". " you have to pay for this with your Nationality";	
+	}else{
+		if($dbpos == 37){
+		echo "If you want to move 3 steps forward,"."<br>". " you have to pay for this with your Last name";	
+	}else{
+		if($dbpos == 39){
+		echo "If you want to move 3 steps forward, "."<br>". "you have to pay for this with your Adress Number";	
+	}else{
+		if($dbpos == 41){
+		echo "You entered in a"."<br>". " secret passage."."<br>". "Press No to continue";	
+	}else{
+		if($dbpos == 42){
+		echo "If you want to move 3 steps forward,"."<br>". " you have to pay for this with your Postcode";	
+	}else{
+		if($dbpos == 43){
+		echo "If you want to move 3 steps forward,"."<br>". " you have to pay for this with your Street";	
+	}else{
+		if($dbpos == 44){
+		echo "If you want to move 2 steps forward,"."<br>". " you have to pay for this with your most liked foods";	
+	}else{
+		if($dbpos == 46){
+		echo "If you want to move 1 step forward,"."<br>". " you have to pay for this with your favorite animal";	
+	}else{
+		if($dbpos == 48){
+		echo "If you want to move 2 steps forward,"."<br>". " you have to pay for this with your favourite TV presentor";	
+	}else{
+		if($dbpos == 49){
+		echo "If you want to move 10 steps forward,"."<br>". " you have to pay for this with your Bank account pincode";	
+	}else{
+		if($dbpos == 53){
+		echo "If you want to move 3 steps forward,"."<br>". " you have to pay for this with your phone number";	
+	}else{
+		if($dbpos == 57){
+		echo "If you want to stay on this tile,"."<br>". " you have to pay for this with your School/Work";	
+	}else{
+		if($dbpos == 60){
+		echo "If you want to move 5 steps forward,"."<br>". " you have to pay for this with your date of birth";	
+	}else{
+		if($dbpos == 61){
+		echo "If you want to stay on this tile, "."<br>". "you have to pay for this with your favourite game";	
+	}else{
+		if($dbpos == 62){
+		echo "If you want to get 3 steps back,"."<br>". " you have to pay for this with your favourite phone brands";	//change in datasubmit
+	}else{
+		if($dbpos > 62){
+		echo "You have finished the game. Congratulations!";	
+	}else{
+		echo "Nothing to do, Press Continue";
+	}
+	}
+	}
+	}
+	}
+	}
+	}
+	}
+	}
+	}
+	}
+	}
+	}
+	}
+	}
+	}
+	}
+	}
+	}
+	}
+	}
+	}
+	}
+	}
+	}
+	}
+	}
+	}
+	}
+} }}}}
 ?>
+
 <meta name="viewport" content="width=device-width, initial-scale=2.0">
-<input type="button" onclick="location.href='firstscreen.php';" value="Continue" />
-
-
-
+<br><input type="button" onclick="location.href='firstscreen.php';" value="Continue" /><br><br>
+<input type="button" onclick="location.href='playerdata.php';" value="Yes, I want to pay for this" /><br><br>
+<input type="button" onclick="location.href='deny.php';" value="No, I want to keep my data safe" /><br><br>
