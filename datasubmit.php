@@ -18,6 +18,7 @@ $datab = $_GET[fname];
 $dbpos = $_SESSION["sessionposition"];
 $extraposition = 0;
 
+//Show what player got from the data he entered
 if($dbpos == 2){
 		echo "You go 4 steps forward";
 				$extraposition = 4;
@@ -183,7 +184,7 @@ if($dbpos == 2){
 
 	}}}
 $newvalue = $dbpos + $extraposition;
-	
+//Update database with the new position	
 $sql = "UPDATE playertable SET data = '$datab', position = position + $extraposition WHERE username = '{$name3}'";
 //echo "Your new position is now" . $newvalue;
 if ($conn->query($sql) === TRUE) {
@@ -194,7 +195,7 @@ if ($conn->query($sql) === TRUE) {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
 $conn->close();
-//check the form after that..
+//Redirect back to firstscreen.php
 ?>
 <meta name="viewport" content="width=device-width, initial-scale=1.6">
 <br><br> <input type="button" onclick="location.href='firstscreen.php';" value="Continue" />

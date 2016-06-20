@@ -14,24 +14,17 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
-//logic
-//echo "Position is " . $_SESSION['sessionposition'] . ".";
-
-
-
 
 $db_handle = mysql_connect($servername, $username, $password);
 $db_found = mysql_select_db($dbname, $db_handle);
 
 if ($db_found) {
-
+//Get the position of the current player
 $SQL = "SELECT position FROM playertable WHERE username='{$nam2}'";
 $result = mysql_query($SQL);
 
 while ( $db_field = mysql_fetch_assoc($result) ) {
 
-//print $db_field['position'] . "<BR>";
-//echo "Postition reiceived" . $db_field['position'];
 $dbpos = $db_field['position'];
 
 }
@@ -45,7 +38,7 @@ print "Database NOT Found ";
 mysql_close($db_handle);
 
 }
-
+//Show what data the player has to enter
 
 if($dbpos == 2){
 	echo "Enter your email";	
@@ -175,7 +168,7 @@ if($dbpos == 2){
 	}
 } }}
 
-	
+//Redirect to datasubmit.php
 ?>
 <body>
 <meta name="viewport" content="width=device-width, initial-scale=1.5">

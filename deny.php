@@ -15,7 +15,7 @@ if ($conn->connect_error) {
 //$datab = $_GET[fname];
 $dbpos = $_SESSION["sessionposition"];
 $extraposition = 0;
-
+//Show to user the incentive he got
 if($dbpos == 2){
 		echo "You go 1 steps forward";
 				$extraposition = 1;
@@ -53,7 +53,7 @@ if($dbpos == 2){
 			$extraposition = 4;
 	}else{
 		if($dbpos == 16){
-		echo "You went to tile 24. Congratulations!";
+		echo "You went to tile 24. <br>Congratulations!";
 			$extraposition = 8;
 	}else{
 		if($dbpos == 21){
@@ -104,7 +104,7 @@ if($dbpos == 2){
 			$extraposition = 1;	
 	}else{
 		if($dbpos == 41){
-		echo "You went to tile 51. Congratulations!";
+		echo "You went to tile 51. <br>Congratulations!";
 			$extraposition = 10;
 	}else{
 		if($dbpos == 42){
@@ -152,7 +152,7 @@ if($dbpos == 2){
 			$extraposition = -5;		
 	}else{
 		if($dbpos > 62){
-		echo "You have finished the game. Congratulations!";	
+		echo "You have finished the game. <br>Congratulations!";	
 	}else{
 		echo "Nothing to do";
 	}
@@ -188,7 +188,7 @@ if($dbpos == 2){
 
 	}}}}}
 $newvalue = $dbpos + $extraposition;
-	
+//Update database with the new player position	
 $sql = "UPDATE playertable SET position = $newvalue WHERE username = '{$name4}'";
 //echo "Your new position is now" . $newvalue;
 if ($conn->query($sql) === TRUE) {
@@ -199,7 +199,7 @@ if ($conn->query($sql) === TRUE) {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
 $conn->close();
-//check the form after that..
+//Redirect back to firstscreen.php
 ?>
 <meta name="viewport" content="width=device-width, initial-scale=1.6">
 <br><br> <input type="button" onclick="location.href='firstscreen.php';" value="Continue" />

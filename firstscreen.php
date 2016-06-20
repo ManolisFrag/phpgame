@@ -1,6 +1,6 @@
 <?php
-echo "Please Roll the Dice at your turn <br>";
-//echo "Enter your data to continue <br>";
+echo "Please Roll the Dice <br>";
+echo "at your turn <br>";
 ?>
 
 <body>

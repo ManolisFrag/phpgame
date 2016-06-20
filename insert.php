@@ -1,7 +1,7 @@
 <?php
 // Start the session
 session_start();
-
+//database credentials
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -14,10 +14,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
-//echo "Connected successfully dude";
-//$sql = "SELECT ID, username, points FROM playertable";
-//$result = $conn->query($sql);
-//$r = rand(0,100);
+
 $name = $_POST[username];
 	$_SESSION["sessionposition"] = 0;
 //Instert username into playertable
@@ -34,7 +31,7 @@ if ($conn->query($sql) === TRUE) {
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
-//redirect to action.php
+//redirect to firstscreen.php
 
 //
 header('Location: firstscreen.php');
