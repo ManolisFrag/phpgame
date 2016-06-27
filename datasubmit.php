@@ -1,8 +1,8 @@
 <?php
 session_start();
-$servername = "localhost";
+$servername = "37.97.182.151";
 $username = "root";
-$password = "";
+$password = "2o1s1xSV";
 $dbname = "gamedb";
 $name3 = $_SESSION['currentplayer'];
 // Create connection

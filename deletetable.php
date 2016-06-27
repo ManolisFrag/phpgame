@@ -1,6 +1,6 @@
 <?php
     // Create connection
-    $con=mysqli_connect("localhost","root","","gamedb");
+    $con=mysqli_connect("37.97.182.151","root","2o1s1xSV","gamedb");
     // Check connection
     if (mysqli_connect_errno($con))
     {

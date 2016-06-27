@@ -2,9 +2,9 @@
 session_start();
 // Echo session variables that were set on previous page
 $nam2 = $_SESSION['currentplayer'];
-$servername = "localhost";
+$servername = "37.97.182.151";
 $username = "root";
-$password = "";
+$password = "2o1s1xSV";
 $dbname = "gamedb";
 
 // Create connection

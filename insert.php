@@ -2,9 +2,9 @@
 // Start the session
 session_start();
 //database credentials
-$servername = "localhost";
+$servername = "37.97.182.151";
 $username = "root";
-$password = "";
+$password = "2o1s1xSV";
 $dbname = "gamedb";
 
 // Create connection

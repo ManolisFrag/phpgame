@@ -9,9 +9,9 @@ echo "<br> The Dice number is " . $dienumber;
 $nam = $_SESSION['currentplayer'];
 
 
-$servername = "localhost";
+$servername = "37.97.182.151";
 $username = "root";
-$password = "";
+$password = "2o1s1xSV";
 $dbname = "gamedb";
 
 // Create connection
@@ -144,7 +144,7 @@ if($dbpos == 2){
 		echo "If you want to move 3 steps <br> forward,"."<br>". " you have to pay for this with your Street";	
 	}else{
 		if($dbpos == 44){
-		echo "If you want to move 2 steps <br> forward,"."<br>". " you have to pay for this with your most liked foods";	
+		echo "If you want to move 2 steps <br> forward,"."<br>". " you have to pay for this with your most diliked foods";	
 	}else{
 		if($dbpos == 45){
 		echo "Skip a turn <br> "."<br>". " Press continue <br> ";	
